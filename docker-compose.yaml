@@ -13,5 +13,26 @@ services:
       - type: bind
         source: .
         target: /sample-sinatra
+    environment:
+      DB_HOST: "mysql"
+      DB_USER: "root"
+      DB_PASSWORD: ""
+    depends_on:
+      - mysql
     tty: true
     stdin_open: true
+
+  mysql:
+    build:
+      context: .
+      dockerfile: ./docker/mysql/Dockerfile
+    container_name: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+
+volumes:
+  mysql-data:
