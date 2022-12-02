@@ -1,7 +1,7 @@
 require './controller/base'
 
-class SampleSinatra < Base
+class Home < Base
   get '/' do
-    'hello world!'
+    'hello world!!'
   end
 end

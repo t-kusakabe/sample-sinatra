@@ -1,9 +1,9 @@
 require 'sinatra/reloader'
 
-require './app'
+require './controller/home'
 require './controller/test'
 
 run Rack::URLMap.new({
-  '/' => SampleSinatra,
+  '/' => Home,
   '/test' => Test
 })
