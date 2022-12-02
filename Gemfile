@@ -8,6 +8,9 @@ gem 'puma'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'sinatra-contrib'
+gem 'ridgepole'
+gem 'mysql2'
+
 
 group :development do
   gem 'rubocop'
