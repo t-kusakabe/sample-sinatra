@@ -1,11 +1,6 @@
-require 'sinatra/base'
-require 'sinatra/reloader'
+require './controller/base'
 
-class SampleSinatra < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
-
+class SampleSinatra < Base
   get '/' do
     'hello world!'
   end
