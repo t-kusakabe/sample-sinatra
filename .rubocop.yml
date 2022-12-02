@@ -1,0 +1,7 @@
+# 新ルールを有効化
+AllCops:
+  NewCops: enable
+
+# トップレベルのドキュメントを強制しない
+Style/Documentation:
+  Enabled: false
