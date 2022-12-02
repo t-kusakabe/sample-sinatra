@@ -1,0 +1,23 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: 5 
+  username: <%= ENV.fetch("DB_USER") { 'root' } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { '' } %>
+  host: <%= ENV.fetch("DB_HOST") { '' } %>
+
+development:
+  <<: *default
+  database: sample_sinatra_dev
+
+test:
+  <<: *default
+  database: sample_sinatra_test
+
+staging:
+  <<: *default
+  database: sample_sinatra_stg 
+
+production:
+  <<: *default
+  database: sample_sinatra_prd
