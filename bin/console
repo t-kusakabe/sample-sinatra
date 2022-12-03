@@ -6,3 +6,4 @@ Dir[File.expand_path('../controller/*', __dir__)].sort.each { |f| require f }
 Dir[File.expand_path('../model/*', __dir__)].sort.each { |f| require f }
 
 Pry.start
+exit
