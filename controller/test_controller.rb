@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require './controller/base'
+require './controller/base_controller'
 
-class Test < Base
+class TestController < BaseController
   get '/' do
-    'test controller!'
+    Test.foo
   end
 
   get '/:name' do
