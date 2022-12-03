@@ -10,8 +10,9 @@ gem 'sinatra-activerecord'
 gem 'sinatra-contrib'
 gem 'ridgepole'
 gem 'mysql2'
-
+gem 'psych', '~> 3.1'
 
 group :development do
   gem 'rubocop'
+  gem 'pry'
 end
