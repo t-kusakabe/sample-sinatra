@@ -6,6 +6,7 @@ require 'sinatra/json'
 
 class BaseController < Sinatra::Base
   configure :development do
+    require 'pry'
     register Sinatra::Reloader
 
     Dir[File.join('.', '**', '*.rb')].each { |f| also_reload f }
