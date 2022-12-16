@@ -4,6 +4,7 @@ require './controller/base_controller'
 
 class TestController < BaseController
   get '/' do
+    log Test.foo
     json Test.foo
   end
 
