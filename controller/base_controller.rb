@@ -2,6 +2,7 @@
 
 require 'sinatra/base'
 require 'sinatra/reloader'
+require 'sinatra/json'
 
 class BaseController < Sinatra::Base
   configure :development do

@@ -4,10 +4,15 @@ require './controller/base_controller'
 
 class TestController < BaseController
   get '/' do
-    Test.foo
+    json Test.foo
+  end
+
+  post '/' do
+    test = Test.create!(name: params[:name])
+    json test
   end
 
   get '/:name' do
-    "test controller. hello #{params[:name]}"
+    json "test controller. hello #{params[:name]}"
   end
 end
