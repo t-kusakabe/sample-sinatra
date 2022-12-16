@@ -10,4 +10,13 @@ class BaseController < Sinatra::Base
 
     Dir[File.join('.', '**', '*.rb')].each { |f| also_reload f }
   end
+
+  set :show_exceptions, false
+  error 404 do |e|
+    json e.message
+  end
+
+  error 500 do |e|
+    e.message
+  end
 end
