@@ -16,7 +16,7 @@ test:
 
 staging:
   <<: *default
-  database: sample_sinatra_stg 
+  database: sample_sinatra_stg
 
 production:
   <<: *default
