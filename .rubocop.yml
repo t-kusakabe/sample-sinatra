@@ -5,3 +5,7 @@ AllCops:
 # トップレベルのドキュメントを強制しない
 Style/Documentation:
   Enabled: false
+
+# 無名Moduleを使ったusingを許容する
+Lint/AmbiguousBlockAssociation:
+  Enabled: false
