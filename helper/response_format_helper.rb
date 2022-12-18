@@ -18,6 +18,8 @@ module ResponseFormatHelper
       end
     end
 
-    camelize(JSON.parse(body))
+    return camelize(JSON.parse(body)) if JSON.parse(body).instance_of?(Hash)
+
+    body
   end
 end
