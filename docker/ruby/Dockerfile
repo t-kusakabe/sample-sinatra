@@ -47,4 +47,4 @@ RUN apk update && \
 COPY --from=builder /usr/local/bundle /usr/local/bundle
 COPY . .
 
-# CMD ["bin/rails", "server", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "rackup", "config.ru", "-o", "0.0.0.0"]
