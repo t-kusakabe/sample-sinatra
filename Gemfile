@@ -4,14 +4,14 @@ source 'https://rubygems.org'
 
 gem 'activerecord'
 gem 'activesupport'
+gem 'mysql2'
+gem 'pry'
+gem 'psych', '~> 3.1'
 gem 'puma'
+gem 'ridgepole'
 gem 'sinatra'
 gem 'sinatra-activerecord'
 gem 'sinatra-contrib'
-gem 'ridgepole'
-gem 'mysql2'
-gem 'psych', '~> 3.1'
-gem 'pry'
 
 group :development do
   gem 'rubocop'
