@@ -5,6 +5,8 @@ require 'sinatra/reloader'
 require 'sinatra/json'
 require 'logger'
 require_relative '../helper/logger_helper'
+require_relative '../helper/request_format_helper'
+require_relative '../helper/response_format_helper'
 
 class BaseController < Sinatra::Base
   configure :development do
@@ -32,4 +34,14 @@ class BaseController < Sinatra::Base
   end
 
   helpers LoggerHelper
+  helpers RequestFormatHelper
+  helpers ResponseFormatHelper
+
+  before do
+    deep_snakeize!(params)
+  end
+
+  after do
+    response.body = json(deep_camelize!)
+  end
 end
