@@ -8,20 +8,17 @@ module ResponseFormatHelper
       end
 
       def array_in_inside?(array)
-        array.instance_of?(Array) ? array_in_inside?(array.first) : array
+        array.instance_of?(Array) ? array_in_inside?(array.first) : camelize(array)
       end
     end
   }
 
   def deep_camelize!
-    body = response.body.first
+    body = JSON.parse(response.body.first)
 
-    return camelize(JSON.parse(body)) if JSON.parse(body).instance_of?(Hash)
-    return body unless JSON.parse(body).instance_of?(Array)
+    return camelize(body) if body.instance_of?(Hash)
+    return body unless body.instance_of?(Array)
 
-    extracted_data = array_in_inside?(JSON.parse(body))
-    return camelize(extracted_data) if extracted_data.instance_of?(Hash)
-
-    body
+    body.map { |row| array_in_inside?(row) }
   end
 end
