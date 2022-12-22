@@ -30,7 +30,7 @@ class BaseController < Sinatra::Base
 
   error 500 do |e|
     logger.error "Error: #{e.message}"
-    e.message
+    json e.message
   end
 
   helpers LoggerHelper
