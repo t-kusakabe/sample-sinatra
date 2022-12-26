@@ -4,6 +4,7 @@ module ResponseFormatHelper
   using Module.new {
     refine ResponseFormatHelper do
       def camelize(data)
+        return data unless data.instance_of?(Hash)
         data.deep_transform_keys! { |k| k.camelize(:lower) }
       end
 
